@@ -1,0 +1,1 @@
+﻿package com.wastedpotential {	import flash.display.MovieClip;		public class Main extends MovieClip {		//- constructor		public function Main() {			trace("Main :: CONSTRUCTOR");					}	}	}
