@@ -1,28 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-	<head>
-		<title>SWFObject 2 static publishing example page</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<script type="text/javascript" src="swfobject.js"></script>
-		<script type="text/javascript">
-		swfobject.registerObject("myId", "9.0.0", "expressInstall.swf");
-		</script>
-	</head>
-	<body>
-		<div>	
-			<object id="myId" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="120">
-				<param name="movie" value="test.swf" />
-        		<!--[if !IE]>-->
-				<object type="application/x-shockwave-flash" data="test.swf" width="300" height="120">
-				<!--<![endif]-->
-				<div>
-					<h1>Alternative content</h1>
-					<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
-				</div>
-				<!--[if !IE]>-->
-				</object>
-				<!--<![endif]-->
-			</object>
-		</div>
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bouncing Babies</title>
+
+<link media="screen" rel="stylesheet" href="styles/basic.css" type="text/css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/swfobject.js"></script>
+
+<script type="text/javascript">
+//this handles pausing/unpausing the flash (if it is enabled)
+/*$(function() {
+	$(window).blur(function(){
+		//$('#flash_replace').flashBlur(); //THIS DOESN'T WORK
+		document.getElementById("flash_replace").flashBlur();
+	});
+	$(window).focus(function(){
+		//$('#flash_replace').flashFocus(); //THIS DOESN'T WORK
+		document.getElementById("flash_replace").flashFocus();
+	});
+});*/
+</script>
+
+<script type="text/javascript">
+	var flashvars = {};
+	var params = {};
+	//params.wmode = 'transparent';
+	params.bgcolor = '#000000';
+	params.allowScriptAccess = 'sameDomain';
+	//params.scale = 'noscale';
+	var attributes = {};
+	swfobject.embedSWF("bouncing_babies.swf", "flash_replace", "480", "320", "10.0.2", "expressInstall.swf", flashvars, params, attributes);
+    console.log("flash it up!");
+</script>
+
+</head>
+
+
+<body>
+
+<div id="flash_container">
+	<div id="flash_replace">
+    	alternate content goes here.
+    </div>
+</div> <!-- end of flash_container -->
+
+
+
+</body>
 </html>
