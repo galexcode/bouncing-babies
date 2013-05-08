@@ -1,0 +1,1 @@
+﻿package com.wastedpotential {		public class Settings {				//game settings:		public static var speedMultiplier:Number = 1.5;								//THIS CLASS HAS NO CONSTRUCTOR BECAUSE IT IS A "SINGLETON" VAR HOLDER					} //end class	} //end package
